@@ -1,0 +1,96 @@
+.home {
+  .nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    .menu-item {
+      width: 32%;
+      height: 90px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 3px;
+      margin-bottom: 2%;
+      overflow: hidden;
+      > span {
+        font-size: 1.5rem;
+        color: #3c492f;
+      }
+      &:hover {
+        background: #e9ffda;
+      }
+    }
+  }
+  .link-table {
+    text-align: right;
+    margin-top: 10px;
+  }
+  .ant-table-pagination {
+    display: none;
+  }
+}
+
+/*===============  RESPONSIVE  ==================*/
+
+@media (min-width: 320px) {
+  .home {
+    .nav-menu {
+      .menu-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .home {
+    .nav-menu {
+      .menu-item {
+        width: 49%;
+        margin-right: 2%;
+        margin-bottom: 15px;
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .home {
+    .nav-menu {
+      .menu-item {
+        width: 32%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        &:nth-child(even) {
+          margin-right: 2%;
+        }
+        &:nth-child(3n + 0) {
+          margin-right: 0;
+        }
+        > span {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1130px) {
+  .home {
+    .nav-menu {
+      .menu-item {
+        > span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

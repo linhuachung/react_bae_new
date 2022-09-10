@@ -1,0 +1,63 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 15px;
+  background: #333;
+  z-index: 1000;
+  .header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .menu-item {
+      margin-right: 20px;
+    }
+  }
+  a.menu-item,
+  i.anticon-menu,
+  .link-login {
+    font-family: "Hiragino Sans GB W6";
+    font-weight: bolder;
+    color: #479c08;
+    &:hover {
+      color: #479c08;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  .flags {
+    img {
+      height: 24px;
+      width: auto;
+      cursor: pointer;
+    }
+  }
+}
+
+/*===============  RESPONSIVE  ==================*/
+
+@media (min-width: 320px) {
+  header {
+    .link-login {
+      display: none;
+    }
+    .btn-menu-header {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    .btn-menu-header {
+      display: none;
+    }
+    .link-login {
+      display: block;
+    }
+  }
+}

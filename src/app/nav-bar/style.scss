@@ -1,0 +1,99 @@
+nav {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  background: #333;
+  overflow-x: hidden;
+  z-index: 900;
+  .menu-item {
+    position: relative;
+    cursor: pointer;
+    span {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      &::after {
+        visibility: hidden;
+        content: "";
+        position: absolute;
+        top: 22px;
+        right: 0;
+        margin-left: -5px;
+        border-width: 10px;
+        transform: translate(0, -11px);
+        border-style: solid;
+        border-color: transparent #fff transparent transparent;
+      }
+    }
+    .sub-menu {
+      height: 0;
+      width: 100%;
+      overflow: hidden;
+      > .menu-item {
+        &:hover,
+        &.active {
+          > span {
+            color: #4ea012;
+            background: transparent;
+            &::after {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+    &:hover,
+    &.active {
+      > span {
+        background: #4ea012;
+        &::after {
+          visibility: visible;
+        }
+      }
+    }
+    &[href="/login"] {
+      border-top: 1px solid #4ea012;
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+/*===============  RESPONSIVE  ==================*/
+
+@media (min-width: 320px) {
+  nav {
+    width: 0;
+    padding-bottom: 80px;
+    .menu-item {
+      &::after {
+        border-color: transparent;
+      }
+    }
+    &.open {
+      background: #333;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    width: 250px;
+    padding-bottom: 10px;
+    .menu-item {
+      &::after {
+        border-color: transparent #fff transparent transparent;
+      }
+      &[href="/login"] {
+        display: none;
+      }
+    }
+  }
+}
